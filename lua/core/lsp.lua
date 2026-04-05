@@ -55,8 +55,19 @@ vim.lsp.config("roslyn", {
     "dotnet",
     roslyn_path,
     "--logLevel=Information",
-    "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
+    "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.log.get_filename()),
     "--stdio",
   },
 })
 
+-- C
+vim.lsp.config("clangd", {
+  capabilities = capabilities,
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--clang-tidy",
+  },
+})
+
+vim.lsp.enable("clangd")
