@@ -1,6 +1,11 @@
 local map = vim.keymap.set
 
---basic commands
+-- disabled
+map({'n', 'v', 'x'}, "<PageUp>", "<Nop>")
+map({'n', 'v', 'x'}, "<PageDown>", "<Nop>")
+map({'n', 'v', 'x'}, "<S-Right>", "<Nop>")
+
+-- basic commands
 map('n', '<leader>o', ':update<CR> :source<CR>', { desc = "Update and source" })
 map({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>', { desc = "Copy to clipboard" })
 map({ 'n', 'v' }, '<leader>d', '"_d', { desc = "Delete without yanking" })
