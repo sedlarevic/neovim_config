@@ -19,7 +19,7 @@ vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover,
   { desc = "Show hover information (documentation) for symbol under cursor" })
 
 -- LUA LS
-vim.lsp.config("lua_ls",{
+vim.lsp.config("lua_ls", {
   capabilities = capabilities,
   settings = {
     Lua = {
@@ -48,17 +48,6 @@ vim.lsp.config("basedpyright", {
 })
 
 -- C# (roslyn)
-local roslyn_path = vim.fn.expand("~/.tools/roslyn/Microsoft.CodeAnalysis.LanguageServer.dll")
-vim.lsp.config("roslyn", {
-  capabilities = capabilities,
-  cmd = {
-    "dotnet",
-    roslyn_path,
-    "--logLevel=Information",
-    "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.log.get_filename()),
-    "--stdio",
-  },
-})
 
 -- C
 vim.lsp.config("clangd", {
@@ -78,4 +67,3 @@ vim.lsp.enable("clangd")
 
 
 -- AUTOCOMPLETION
-
