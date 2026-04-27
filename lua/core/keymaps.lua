@@ -1,12 +1,12 @@
 local map = vim.keymap.set
 
 -- disabled
-map({'n', 'v', 'x', 'i'}, "<PageUp>", "<Nop>")
-map({'n', 'v', 'x', 'i'}, "<PageDown>", "<Nop>")
-map({'n', 'v', 'x', 'i'}, "<S-Right>", "<Nop>")
+map({ 'n', 'v', 'x', 'i' }, "<PageUp>", "<Nop>")
+map({ 'n', 'v', 'x', 'i' }, "<PageDown>", "<Nop>")
+map({ 'n', 'v', 'x', 'i' }, "<S-Right>", "<Nop>")
 
-map({'n', 'v', 'x', 'i'}, "<S-PageUp>", "<Nop>")
-map({'n', 'v', 'x', 'i'}, "<S-PageDown>", "<Nop>")
+map({ 'n', 'v', 'x', 'i' }, "<S-PageUp>", "<Nop>")
+map({ 'n', 'v', 'x', 'i' }, "<S-PageDown>", "<Nop>")
 
 -- basic commands
 map('n', '<leader>o', ':update<CR> :source<CR>', { desc = "Update and source" })
@@ -28,9 +28,12 @@ map("n", "<leader>pa", function()
   print("file:", path)
 end, { desc = "Copy filepath to clipboard" })
 -- plugins
+  -- pick
 map('n', '<leader>f', ":Pick files<CR>", { desc = "Pick file" })
 map('n', '<leader>h', ":Pick help<CR>", { desc = "Pick help" })
+  -- oil
 map('n', '<leader>-', ":Oil<CR>", { desc = "Oil" })
+  -- arrow
 map("n", "H", require("arrow.persist").previous)
 map("n", "L", require("arrow.persist").next)
 
