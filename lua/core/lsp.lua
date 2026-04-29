@@ -1,5 +1,7 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+vim.lsp.log.set_level("OFF")
+
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format,
   { desc = "Format the current buffer using the language server" })
 vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action,
@@ -56,6 +58,8 @@ vim.lsp.config("clangd", {
     "clangd",
     "--background-index",
     "--clang-tidy",
+    "--query-driver=**/cl.exe",
+    "--completion-style=detailed",
   },
 })
 
