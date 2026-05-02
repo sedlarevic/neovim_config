@@ -3,7 +3,13 @@ Hello everybody! Here is a quick tutorial.
 leader = space
 
 * Useful:
+ - yank to clipboard: leader + y
+ - delete without yanking: leader + d
+ - yank to eol: Y
  - copy filepath to clipboard: leader + p + a
+ - un/redo: u/U
+ - move selected chunk of text down/up: J/K
+ - in/outdent: </>
 
 * LSP:
  - leader + l

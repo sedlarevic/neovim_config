@@ -3,10 +3,10 @@ return {
   version = false,
 
   keys = {
-    { "<leader>ff", "<cmd>Pick files<cr>", desc = "Find files" },
-    { "<leader>fg", "<cmd>Pick grep_live<cr>", desc = "Live grep" },
-    { "<leader>fb", "<cmd>Pick buffers<cr>", desc = "Buffers" },
-    { "<leader>fh", "<cmd>Pick help<cr>", desc = "Help" },
+    { "<leader>ff", "<cmd>Pick files<cr>", desc = "Pick Find files" },
+    { "<leader>fg", "<cmd>Pick grep_live<cr>", desc = "Pick Live grep" },
+    { "<leader>fb", "<cmd>Pick buffers<cr>", desc = "Pick Buffers" },
+    { "<leader>fh", "<cmd>Pick help<cr>", desc = "Pick Help" },
   },
 
   config = function()
