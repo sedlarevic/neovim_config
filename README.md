@@ -4,8 +4,8 @@ leader = space
 
 * Useful:
  - yank to clipboard: leader + y
- - delete without yanking: leader + d
  - yank to eol: Y
+ - delete without yanking: leader + d
  - copy filepath to clipboard: leader + p + a
  - un/redo: u/U
  - move selected chunk of text down/up: J/K
@@ -42,4 +42,16 @@ leader = space
  - skip cursors:
     - below:
     - above:
+
+* Remaps for movement:
+ - line begin: g + h
+ - line end: g + l
+ - buffer top: g + k
+ - buffer bottom: g + j
+ - first char in line: g + s
+ - catch next (){}[] in line: g + n
+ - traverse downwards, cursor on half page: C-d
+ - traverse upwards, cursor on half page C-u
+ - traverse to next iteration of a word: n
+ - traverse to previous iteration of a word: N
 
