@@ -5,7 +5,7 @@ return {
     local wk = require("which-key")
     wk.setup({})
     vim.keymap.set("n", "<leader>?", function()
-      wk.show({ global = false })
+      wk.show({ global = true })
     end, { desc = "Buffer Local Keymaps (which-key)" })
   end,
 }
