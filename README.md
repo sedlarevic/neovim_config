@@ -7,7 +7,7 @@ leader = space
     - move to windows: C-<hjkl>
     - create a vertical window: C-a-|
     - create horizontal window: C-a--
-    - create a new session: C-n
+    - create a new session: C-[
     - delete a session: C-]
     - browse sessions: C-b
     - lazygit in tmux: C-y
@@ -21,7 +21,7 @@ leader = space
             - copy filepath to clipboard: leader + p + a
             - un/redo: u/U
             - move selected chunk of text down/up: J/K
-            - in/outdent: </>
+            - in/outdent: Tab/S-Tab
         - movement
             - line begin: g + h
             - line end: g + l
@@ -45,7 +45,7 @@ leader = space
 
 - arrow:
     - leader: leader + a
-    - buffer leader: leader + m
+    - buffer leader: leader + ;
 
 - blink:
     - accept: C-space
@@ -65,11 +65,11 @@ leader = space
 - multicursor:
     - match cursors
         - next: C-m
-        - previous: C-S-m
+        - previous: C-M
     - skip matches:
         - next: C-n
-        - previous: C-S-n
+        - previous: C-N
     - cursor in line:
-        - below: C-S-v
-        - above: C-S-v
+        - below: C-v
+        - above: C-V
 
