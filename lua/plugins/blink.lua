@@ -17,8 +17,8 @@ return {
 
       ["<Up>"] = { "select_prev", "fallback" },
       ["<Down>"] = { "select_next", "fallback" },
-      ["<C-k>"] = { "select_prev", "fallback" },
-      ["<C-j>"] = { "select_next", "fallback" },
+      ["<C-,>"] = { "select_prev", "fallback" },
+      ["<C-.>"] = { "select_next", "fallback" },
 
       ["<S-k>"] = { "scroll_documentation_up", "fallback" },
       ["<S-j>"] = { "scroll_documentation_down", "fallback" },

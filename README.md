@@ -2,6 +2,16 @@ Hello everybody! Here is a quick tutorial.
 
 leader = space
 
+- tmux
+    - leader: C-a
+    - move to windows: C-<hjkl>
+    - create a vertical window: C-a-|
+    - create horizontal window: C-a--
+    - create a new session: C-n
+    - delete a session: C-]
+    - browse sessions: C-b
+    - lazygit in tmux: C-y
+
 - useful:
     - remapped
         - editing
@@ -39,7 +49,7 @@ leader = space
 
 - blink:
     - accept: C-space
-    - go through completion menu: Up/Down or C-k/C-j
+    - go through completion menu: Up/Down or C-,/C-.
     - documentation scroll : S-k/S-j
     - go through snippet placeholders: Tab/S-Tab
 
@@ -49,17 +59,17 @@ leader = space
 
 - mini-pick:
     - leader + f for find/grep/help
-    - go through completion menu: Up/Down or C-k/C-j
+    - go through completion menu: Up/Down or C-,/C-.
     - scroll Up/Down: S-k/S-j
 
 - multicursor:
     - match cursors
-        - next: C-n
-        - previous: C-p
+        - next: C-m
+        - previous: C-S-m
     - skip matches:
-        - next: C-s
-        - previous: C-S-s
-    - skip cursors:
-        - below:
-        - above:
+        - next: C-n
+        - previous: C-S-n
+    - cursor in line:
+        - below: C-S-v
+        - above: C-S-v
 

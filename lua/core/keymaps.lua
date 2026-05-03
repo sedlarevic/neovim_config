@@ -30,8 +30,9 @@ map('n', 'N', 'Nzzzv', { desc = "Previous iteration of a word on cursor" })
 
 -- useful commands
 map('n', 'Y', 'y$', { desc = "Yank to EOL" })
-map('v', '<', '<gv', { desc = "Indent selected chunk of text" })
-map('v', '>', '>gv', { desc = "Outdent selected chunk of text" })
+
+map('v', '<S-Tab>', '<gv', { desc = "Indent left selected chunk of text" })
+map('v', '<Tab>', '>gv', { desc = "Indent right selected chunk of text" })
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected chunk of text down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected chunk of text up" })
 map("n", "<leader>pa", function()

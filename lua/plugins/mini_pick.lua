@@ -12,8 +12,8 @@ return {
   config = function()
     require("mini.pick").setup({
       mappings = {
-        move_down = "<C-j>",
-        move_up = "<C-k>",
+        move_down = "<C-.>",
+        move_up = "<C-,>",
 
         choose = "<CR>",
         stop = "<Esc>",

@@ -1,5 +1,5 @@
 return {
-  "jake-stewart/multicursor.nvim",
+"jake-stewart/multicursor.nvim",
   branch = "1.0",
 
   config = function()
@@ -9,29 +9,29 @@ return {
     local set = vim.keymap.set
 
     -- Match cursors
-    set({ "n", "x" }, "<C-n>", function()
+    set({ "n", "x" }, "<C-m>", function()
       mc.matchAddCursor(1)
     end, { desc = "MC next match" })
 
-    set({ "n", "x" }, "<C-p>", function()
+    set({ "n", "x" }, "<C-S-m>", function()
       mc.matchAddCursor(-1)
     end, { desc = "MC previous match" })
 
     -- Skip matches
-    set({ "n", "x" }, "<C-s>", function()
+    set({ "n", "x" }, "<C-n>", function()
       mc.matchSkipCursor(1)
     end, { desc = "MC skip next" })
 
-    set({ "n", "x" }, "<C-S-s>", function()
+    set({ "n", "x" }, "<C-S-n>", function()
       mc.matchSkipCursor(-1)
     end, { desc = "MC skip previous" })
 
     -- Vertical cursors
-    set({ "n", "x" }, "<C-j>", function()
+    set({ "n", "x" }, "<C-v>", function()
       mc.lineAddCursor(1)
     end, { desc = "MC cursor below" })
 
-    set({ "n", "x" }, "<C-k>", function()
+    set({ "n", "x" }, "<C-S-v>", function()
       mc.lineAddCursor(-1)
     end, { desc = "MC cursor above" })
 
