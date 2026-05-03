@@ -15,7 +15,8 @@ leader = space
  - leader + l
 
 * Arrow:
- - leader + ;
+ - leader: leader + a
+ - buffer leader: leader + m
 
 * Blink:
  - accept: C-space
@@ -55,3 +56,9 @@ leader = space
  - traverse to next iteration of a word: n
  - traverse to previous iteration of a word: N
 
+* Useful not remapped
+ - mark
+    - mark location: m + char
+    - goto mark exact location: \` + char
+    - goto mark line: ' + char
+    - delete mark: :delmark char

@@ -1,8 +1,8 @@
 return {
   "otavioschwanck/arrow.nvim",
   opts = {
-    leader_key = ";",
-    buffer_leader_key = "m",
+    leader_key = "<leader>a",
+    buffer_leader_key = "<leader>m",
     show_icons = false,
   },
 }
