@@ -73,3 +73,6 @@ leader = space
         - below: C-v
         - above: C-V
 
+- visual_surround:
+    - S + ( { [ < " ' in Visual Mode
+
