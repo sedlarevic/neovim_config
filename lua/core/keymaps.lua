@@ -21,6 +21,8 @@ map({ "n", "v" }, "gk", "gg", { desc = "Buffer top" })
 map({ "n", "v" }, "gj", "G", { desc = "Buffer bottom" })
 map({ "n", "v" }, "gs", "^", { desc = "First char of line" })
 map({ "n", "v" }, "gn", "%", { desc = "Match next (){}[] in line" })
+map({ "n", "v" }, "gm", "*",
+  { desc = "Search forward for the exact exact whole-word match of the word currently under cursor." })
 --map({ "n", "v" }, "ga", "<C-^>", { desc = "Goto previous buffer" })
 map('n', '<C-d>', '<C-d>zz', { desc = "Traverse downwards, cursor on half page" })
 map('n', '<C-u>', '<C-u>zz', { desc = "Traverse upwards, cursor on half page" })
