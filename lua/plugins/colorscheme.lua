@@ -1,10 +1,23 @@
 return {
   "miikanissi/modus-themes.nvim",
   priority = 1000,
+
   config = function()
-    vim.cmd("colorscheme modus")
-  end
+    require("modus-themes").setup({
+      style = "auto",
+
+      on_highlights = function(hl, c)
+        hl.cDefine = { fg = c.magenta }
+        hl["@lsp.type.macro.cpp"] = { fg = "#7db0ff" }
+        hl["@lsp.typemod.macro.declaration.cpp"] = { fg = "#7db0ff" }
+        hl["@lsp.typemod.macro.globalScope.cpp"] = { fg = "#7db0ff" }
+      end,
+    })
+
+    vim.cmd.colorscheme("modus")
+  end,
 }
+
 
 --[[return {
   "ficcdaf/ashen.nvim",
