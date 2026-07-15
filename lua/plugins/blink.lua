@@ -2,6 +2,7 @@ return {
   "saghen/blink.cmp",
   dependencies = {
     "rafamadriz/friendly-snippets",
+    "onsails/lspkind.nvim",
   },
 
   version = "1.*",
@@ -34,6 +35,17 @@ return {
     completion = {
       menu = {
         border = "single",
+        draw = {
+          components = {
+            kind_icon = {
+              ellipsis = false,
+              text = function(ctx)
+                local icon = require("lspkind").symbol_map[ctx.kind]
+                return (icon or ctx.kind_icon) .. ctx.icon_gap
+              end,
+            },
+          },
+        },
       },
       documentation = {
         auto_show = true,
@@ -81,3 +93,4 @@ return {
 
   opts_extend = { "sources.default" },
 }
+
