@@ -22,6 +22,7 @@ leader = space
             - un/redo: u/U
             - move selected chunk of text down/up: J/K
             - in/outdent: Tab/S-Tab
+            - history of yanks/deletes: "
         - movement
             - line begin: g + h
             - line end: g + l
@@ -45,12 +46,12 @@ leader = space
 
 - arrow:
     - leader: leader + a
-    - buffer leader: leader + ;
+    - buffer leader: leader + "
 
 - blink:
-    - accept: C-space
+    - accept: C-y
     - go through completion menu: Up/Down or C-,/C-.
-    - documentation scroll : S-k/S-j
+    - documentation scroll : C-b/C-f
     - go through snippet placeholders: Tab/S-Tab
 
 - commentary:
