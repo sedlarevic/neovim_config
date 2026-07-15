@@ -7,10 +7,10 @@ leader = space
     - move to windows: C-<hjkl>
     - create a vertical window: C-a-|
     - create horizontal window: C-a--
-    - create a new session: C-[
-    - delete a session: C-]
-    - browse sessions: C-b
-    - lazygit in tmux: C-y
+    - create a new session: C-a-[
+    - delete a session: C-a-]
+    - browse sessions: C-a-b
+    - lazygit in tmux: C-a-y
 
 - useful:
     - remapped
@@ -54,10 +54,6 @@ leader = space
     - documentation scroll : C-b/C-f
     - go through snippet placeholders: Tab/S-Tab
 
-- commentary:
-    - comment out a line: gcc
-    - comment out a target with motion: gc + motion 
-
 - mini-pick:
     - leader + f for find/grep/help
     - go through completion menu: Up/Down or C-,/C-.
@@ -65,14 +61,15 @@ leader = space
 
 - multicursor:
     - match cursors
-        - next: C-m
-        - previous: C-M
+        - next: leader-mn
+        - previous: leader-mN
     - skip matches:
-        - next: C-n
-        - previous: C-N
+        - next: leader-ms
+        - previous: leader-mS
     - cursor in line:
-        - below: C-v
-        - above: C-V
+        - below: leader-mj
+        - above: leader-mk
+    - cursor all matches: leader - ma
 
 - visual_surround:
     - S + ( { [ < " ' in Visual Mode
