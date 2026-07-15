@@ -1,49 +1,51 @@
 return {
-"jake-stewart/multicursor.nvim",
+  "jake-stewart/multicursor.nvim",
   branch = "1.0",
 
   config = function()
     local mc = require("multicursor-nvim")
     mc.setup()
 
-    local set = vim.keymap.set
+    local map = vim.keymap.set
 
-    -- Match cursors
-    set({ "n", "x" }, "<C-m>", function()
+    -- Add cursor to matches
+    map({ "n", "x" }, "<leader>mn", function()
       mc.matchAddCursor(1)
-    end, { desc = "MC next match" })
+    end, { desc = "MC add next match" })
 
-    set({ "n", "x" }, "<C-S-m>", function()
+    map({ "n", "x" }, "<leader>mN", function()
       mc.matchAddCursor(-1)
-    end, { desc = "MC previous match" })
+    end, { desc = "MC add previous match" })
 
     -- Skip matches
-    set({ "n", "x" }, "<C-n>", function()
+    map({ "n", "x" }, "<leader>ms", function()
       mc.matchSkipCursor(1)
-    end, { desc = "MC skip next" })
+    end, { desc = "MC skip next match" })
 
-    set({ "n", "x" }, "<C-S-n>", function()
+    map({ "n", "x" }, "<leader>mS", function()
       mc.matchSkipCursor(-1)
-    end, { desc = "MC skip previous" })
+    end, { desc = "MC skip previous match" })
 
     -- Vertical cursors
-    set({ "n", "x" }, "<C-v>", function()
+    map({ "n", "x" }, "<leader>mj", function()
       mc.lineAddCursor(1)
-    end, { desc = "MC cursor below" })
+    end, { desc = "MC add cursor below" })
 
-    set({ "n", "x" }, "<C-S-v>", function()
+    map({ "n", "x" }, "<leader>mk", function()
       mc.lineAddCursor(-1)
-    end, { desc = "MC cursor above" })
+    end, { desc = "MC add cursor above" })
 
-    -- Clear cursors
-    mc.addKeymapLayer(function(layerSet)
-      layerSet("n", "<Esc>", mc.clearCursors)
+    -- Add cursors to every match
+    map({ "n", "x" }, "<leader>ma", mc.matchAllAddCursors, {
+      desc = "MC add all matches",
+    })
+
+    mc.addKeymapLayer(function(layer_set)
+      layer_set({ "n", "x" }, "<Esc>", mc.clearCursors)
     end)
 
-    -- Highlight
-    local hl = vim.api.nvim_set_hl
-    hl(0, "MultiCursorCursor", { reverse = true })
-    hl(0, "MultiCursorVisual", { link = "Visual" })
-    hl(0, "MultiCursorMatchPreview", { link = "Search" })
+    vim.api.nvim_set_hl(0, "MultiCursorCursor", { reverse = true })
+    vim.api.nvim_set_hl(0, "MultiCursorVisual", { link = "Visual" })
+    vim.api.nvim_set_hl(0, "MultiCursorMatchPreview", { link = "Search" })
   end,
 }
