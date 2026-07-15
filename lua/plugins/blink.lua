@@ -11,20 +11,21 @@ return {
     keymap = {
       preset = "default",
 
-      ["<C-space>"] = { "accept" },
+      ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+      ["<C-y>"] = { "select_and_accept", "fallback" },
 
       ["<Tab>"] = { "snippet_forward", "fallback" },
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
 
       ["<Up>"] = { "select_prev", "fallback" },
       ["<Down>"] = { "select_next", "fallback" },
+
       ["<C-,>"] = { "select_prev", "fallback" },
       ["<C-.>"] = { "select_next", "fallback" },
 
-      ["<S-k>"] = { "scroll_documentation_up", "fallback" },
-      ["<S-j>"] = { "scroll_documentation_down", "fallback" },
+      ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+      ["<C-f>"] = { "scroll_documentation_down", "fallback" },
 
-      ["<C-s>"] = { "show", "show_documentation", "hide_documentation" },
       ["<C-e>"] = { "hide", "fallback" },
     },
 
@@ -60,10 +61,11 @@ return {
 
       providers = {
         lsp = {
-          score_offset = 90,
+          score_offset = 10,
+          fallbacks = {},
         },
         path = {
-          score_offset = 25,
+          score_offset = 3,
           opts = {
             trailing_slash = false,
             label_trailing_slash = true,
@@ -76,12 +78,12 @@ return {
         buffer = {
           max_items = 3,
           min_keyword_length = 2,
-          score_offset = 15,
+          score_offset = -5,
         },
         snippets = {
           max_items = 15,
           min_keyword_length = 2,
-          score_offset = 85,
+          score_offset = 5,
         },
       },
     },
@@ -89,8 +91,13 @@ return {
     fuzzy = {
       implementation = "prefer_rust_with_warning",
     },
+    signature = {
+      enabled = true,
+      window = {
+        border = "single",
+      },
+    },
   },
 
   opts_extend = { "sources.default" },
 }
-
