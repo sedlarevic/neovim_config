@@ -6,7 +6,6 @@ vim.o.cursorline = true
 vim.o.wrap = false
 vim.o.scrolloff = 10
 vim.o.sidescrolloff = 8
-vim.o.swapfile = false
 vim.o.winborder = "rounded"
 
 -- indentation
@@ -33,7 +32,6 @@ vim.o.pumblend = 10
 vim.o.winblend = 0
 vim.o.conceallevel = 0
 vim.o.concealcursor = ""
-vim.o.lazyredraw = true
 vim.o.synmaxcol = 300
 
 -- file handling
@@ -49,16 +47,12 @@ vim.o.autoread = true
 vim.o.autowrite = false
 
 -- behavior
-vim.o.hidden = true
 vim.o.errorbells = false
 vim.o.backspace = "indent,eol,start"
-vim.o.autochdir = false
 vim.opt.iskeyword:append("-")
 vim.opt.path:append("**")
 vim.o.mouse = "a"
 --vim.opt.clipboard:append("unnamedplus")
-vim.o.modifiable = true
-vim.o.encoding = "UTF-8"
 vim.g.mapleader = " "
 
 -- wild menu
@@ -71,7 +65,7 @@ vim.opt.redrawtime = 10000
 vim.opt.maxmempattern = 20000
 
 -- create undo directory if it doesn't exist
-local undodir = vim.fn.expand("~/.vim/undodir")
-if vim.fn.isdirectory(undodir) == 0 then
-  vim.fn.mkdir(undodir, "p")
-end
+local undodir = vim.fn.stdpath("state") .. "/undo"
+vim.opt.undofile = true
+vim.opt.undodir = undodir
+vim.fn.mkdir(undodir, "p")

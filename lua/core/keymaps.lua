@@ -10,7 +10,10 @@ map({ 'n', 'v', 'x', 'i' }, "<S-PageDown>", "<Nop>")
 
 -- basic commands
 map('n', '<leader>o', ':update<CR> :source<CR>', { desc = "Update and source" })
-map({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>', { desc = "Copy to clipboard" })
+map({ 'n', 'v', 'x' }, '<leader>y', '"+yy', { desc = "Copy line to clipboard" })
+map("x", "<leader>y", '"+y', {
+  desc = "Copy selection to clipboard",
+})
 map({ 'n', 'v' }, '<leader>d', '"_d', { desc = "Delete without yanking" })
 map('n', 'U', '<C-r>', { noremap = true, desc = "Redo" })
 
