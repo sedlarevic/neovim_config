@@ -74,3 +74,5 @@ leader = space
 - visual_surround:
     - S + ( { [ < " ' in Visual Mode
 
+- dial:
+    - + or - in Visual mode
