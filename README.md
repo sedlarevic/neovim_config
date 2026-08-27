@@ -75,4 +75,4 @@ leader = space
     - S + ( { [ < " ' in Visual Mode
 
 - dial:
-    - + or - in Visual mode
+    - plus (+) or minus (-) in Visual mode
