@@ -30,10 +30,15 @@ leader = space
             - buffer bottom: g + j
             - first char in line: g + s
             - catch next (){}[] in line: g + n
+
             - traverse downwards, cursor on half page: C-d
             - traverse upwards, cursor on half page C-u
+
             - traverse to next iteration of a word: n
             - traverse to previous iteration of a word: N
+
+            - traverse backward in time: C-o
+            - traverse forward in time: C-i
     - not remapped
         - mark
             - mark location: m + char

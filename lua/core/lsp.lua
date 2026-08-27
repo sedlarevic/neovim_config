@@ -19,6 +19,7 @@ vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help,
   { desc = "Show function arguments and expected types while writing a call" })
 vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover,
   { desc = "Show hover information (documentation) for symbol under cursor" })
+vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, { desc = "Go to definition" })
 
 -- LUA LS
 vim.lsp.config("lua_ls", {
@@ -70,4 +71,3 @@ vim.lsp.enable("roslyn")
 vim.lsp.enable("clangd")
 
 -- AUTOCOMPLETION
-
