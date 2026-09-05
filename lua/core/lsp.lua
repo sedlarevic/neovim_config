@@ -6,20 +6,52 @@ vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format,
   { desc = "Format the current buffer using the language server" })
 vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action,
   { desc = "Show available code actions (quick fixes, refactorings, etc.)" })
+
 vim.keymap.set('n', '<leader>lrn', vim.lsp.buf.rename,
   { desc = "Rename the symbol under the cursor" })
 vim.keymap.set('n', '<leader>lrf', vim.lsp.buf.references,
   { desc = "Find all usages of this variable, function, or class in the project"
   })
+
+vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition,
+  { desc = "Go to definition" })
+vim.keymap.set('n', '<leader>lt', vim.lsp.buf.type_definition,
+  { desc = "Go to type definition" })
 vim.keymap.set('n', '<leader>li', vim.lsp.buf.implementation,
   { desc = "Jump to the code that implements an interface or function" })
-vim.keymap.set('n', '<leader>lg', vim.lsp.buf.type_definition,
-  { desc = "Jump to the type of a variable or expression (e.g. struct/class)" })
-vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help,
-  { desc = "Show function arguments and expected types while writing a call" })
+
 vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover,
   { desc = "Show hover information (documentation) for symbol under cursor" })
-vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help,
+  { desc = "Show function arguments and expected types while writing a call" })
+vim.keymap.set("n", "<leader>le", function()
+  vim.diagnostic.open_float(nil, {
+    focus = false,
+    scope = "cursor",
+  })
+end, { desc = "Show diagnostic" })
+
+-- Diagnostic virtual text
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = "●",
+    spacing = 2,
+
+    severity = {
+      min = vim.diagnostic.severity.ERROR,
+    },
+  },
+
+  signs = true,
+  underline = true,
+  severity_sort = true,
+  update_in_insert = false,
+
+  float = {
+    border = "rounded",
+    source = true,
+  },
+})
 
 -- LUA LS
 vim.lsp.config("lua_ls", {
