@@ -39,6 +39,9 @@ leader = space
 
             - traverse backward in time: C-o
             - traverse forward in time: C-i
+
+            - next diagnostic ]d (useful when paired with <leader>le)
+            - last diagnostic [d (useful when paired with <leader>le)
     - not remapped
         - mark
             - mark location: m + char
