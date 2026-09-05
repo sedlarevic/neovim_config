@@ -45,12 +45,31 @@ vim.lsp.config("basedpyright", {
     basedpyright = {
       analysis = {
         typeCheckingMode = "basic",
+        autoImportCompletions = true,
       },
     },
   },
 })
 
 -- C# (roslyn)
+vim.lsp.config("roslyn_ls", {
+  capabilities = capabilities,
+
+  settings = {
+    ["csharp|completion"] = {
+      dotnet_show_completion_items_from_unimported_namespaces = true,
+    },
+
+    ["csharp|background_analysis"] = {
+      dotnet_analyzer_diagnostics_scope = "openFiles",
+      dotnet_compiler_diagnostics_scope = "openFiles",
+    },
+
+    ["csharp|formatting"] = {
+      dotnet_organize_imports_on_format = true,
+    },
+  },
+})
 
 -- C
 vim.lsp.config("clangd", {
@@ -67,7 +86,7 @@ vim.lsp.config("clangd", {
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("gopls")
 vim.lsp.enable("basedpyright")
-vim.lsp.enable("roslyn")
+vim.lsp.enable("roslyn_ls")
 vim.lsp.enable("clangd")
 
 -- AUTOCOMPLETION
