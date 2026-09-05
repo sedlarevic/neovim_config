@@ -45,6 +45,3 @@ map("n", "<leader>pa", function()
   vim.fn.setreg("+", path)
   print("file:", path)
 end, { desc = "Copy filepath to clipboard" })
--- plugins
--- oil
-map('n', '<leader>-', ":Oil<CR>", { desc = "Oil" })

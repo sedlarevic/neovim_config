@@ -88,5 +88,3 @@ vim.lsp.enable("gopls")
 vim.lsp.enable("basedpyright")
 vim.lsp.enable("roslyn_ls")
 vim.lsp.enable("clangd")
-
--- AUTOCOMPLETION
