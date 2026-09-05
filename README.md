@@ -57,7 +57,7 @@ leader = space
     - buffer leader: leader + "
 
 - blink:
-    - accept: C-y
+    - accept: C-/
     - go through completion menu: Up/Down or C-,/C-.
     - documentation scroll : C-b/C-f
     - go through snippet placeholders: Tab/S-Tab
